@@ -1,0 +1,14 @@
+# Mac
+.DS_Store
+
+# Python
+__pycache__/
+
+# DBeaver
+.metadata/
+
+# Power BI
+*.pbix.autorecovery
+
+# Logs
+*.log
