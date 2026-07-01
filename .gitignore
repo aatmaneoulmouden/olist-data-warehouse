@@ -12,3 +12,7 @@ __pycache__/
 
 # Logs
 *.log
+
+# DONT COMMIT THIS FILE TEMPORARILY
+diagrams/.$olist-dw-diagrams.drawio.bkp
+diagrams/olist-dw-diagrams.drawio
