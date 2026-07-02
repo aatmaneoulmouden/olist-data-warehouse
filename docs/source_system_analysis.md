@@ -511,17 +511,19 @@ The Olist source system contains the following business entities:
 
 # Gold Layer Mapping
 
-| Source Table                 | Gold Object                                   |
-| ---------------------------- | --------------------------------------------- |
-| Customers                    | `dim_customers`                               |
-| Sellers                      | `dim_sellers`                                 |
-| Products                     | `dim_products`                                |
-| Product Category Translation | Merged into `dim_products`                    |
-| Geolocation                  | Merged into `dim_customers` and `dim_sellers` |
-| Orders                       | Supporting source for fact tables             |
-| Order Items                  | `fact_sales`                                  |
-| Payments                     | `fact_payments`                               |
-| Reviews                      | `fact_reviews`                                |
+The following table provides the initial mapping between the source system tables and the target Gold layer objects. It serves as a high-level blueprint for the dimensional model and ETL process.
+
+| Source Table                  | Gold Object                    | Transformation |
+|-------------------------------|--------------------------------|----------------|
+| Customers                     | `dim_customers`                | Forms the Customer dimension. Customer attributes are enriched with geographic information from the Geolocation dataset. |
+| Sellers                       | `dim_sellers`                  | Forms the Seller dimension. Seller attributes are enriched with geographic information from the Geolocation dataset. |
+| Products                      | `dim_products`                 | Forms the Product dimension. Product attributes are enriched with translated category names. |
+| Product Category Translation  | `dim_products`                 | Merged into the Product dimension to provide English category names. |
+| Geolocation                   | `dim_customers`, `dim_sellers` | Geographic attributes are merged into the Customer and Seller dimensions after deduplicating ZIP code prefixes in the Silver layer. |
+| Orders                        | `fact_sales`, `fact_payments`, `fact_reviews` | Provides order-level business context (customer, order status, and lifecycle dates) that is merged into the Gold fact tables during the ETL process. |
+| Order Items                   | `fact_sales`                   | Provides the transactional sales records, including product, seller, sales amount, freight amount, and quantity. |
+| Payments                      | `fact_payments`                | Forms the Payments fact table and is enriched with customer and date information from the Orders table. |
+| Reviews                       | `fact_reviews`                 | Forms the Reviews fact table and is enriched with customer and date information from the Orders table. |
 
 ---
 
