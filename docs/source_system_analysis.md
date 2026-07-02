@@ -473,16 +473,17 @@ Products
 
 Understanding the grain (level of detail) of each source table is essential for designing the data warehouse.
 
-| Source Table | Business Grain                                                         |
-| ------------ | ---------------------------------------------------------------------- |
-| Customers    | One row per customer record                                            |
-| Orders       | One row per order                                                      |
-| Order Items  | One row per product within an order                                    |
-| Products     | One row per product                                                    |
-| Sellers      | One row per seller                                                     |
-| Payments     | One row per payment transaction                                        |
-| Reviews      | One row per review                                                     |
-| Geolocation  | One row per geographic location (contains duplicate ZIP code prefixes) |
+| Source Table                  | Business Grain                                                         |
+| ----------------------------- | ---------------------------------------------------------------------- |
+| Customers                     | One row per customer record                                            |
+| Orders                        | One row per order                                                      |
+| Order Items                   | One row per product within an order                                    |
+| Products                      | One row per product                                                    |
+| Sellers                       | One row per seller                                                     |
+| Payments                      | One row per payment transaction                                        |
+| Reviews                       | One row per review                                                     |
+| Geolocation                   | One row per geographic location (contains duplicate ZIP code prefixes) |
+| Product Category Translation  | One row per product category translation from Portuguese to English    |
 
 ---
 
