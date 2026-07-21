@@ -322,16 +322,17 @@ CHECK
 
 **Business grain:** One record per product.
 
-| Constraint Type   | Column                        | Rule                                                  |
-|-------------------|-------------------------------|-------------------------------------------------------|
-| Primary Key       | `product_id`                  | Must uniquely identify each product.                  |
-| Check             | `product_name_lenght`         | Must be greater than or equal to zero.                |
-| Check             | `product_description_lenght`  | Must be greater than or equal to zero.                |
-| Check             | `product_photos_qty`          | Must be greater than or equal to zero.                |
-| Check             | `product_weight_g`            | Must be greater than or equal to zero when populated. |
-| Check             | `product_length_cm`           | Must be greater than or equal to zero when populated. |
-| Check             | `product_height_cm`           | Must be greater than or equal to zero when populated. |
-| Check             | `product_width_cm`            | Must be greater than or equal to zero when populated. |
+| Constraint Type   | Column                        | Rule                                                                                      |
+|-------------------|-------------------------------|-------------------------------------------------------------------------------------------|
+| Primary Key       | `product_id`                  | Must uniquely identify each product.                                                      |
+| Foreign Key       | `product_category_name`       | Must reference an existing translation in `silver.olist_product_category_translations`.   |
+| Check             | `product_name_lenght`         | Must be greater than or equal to zero.                                                    |
+| Check             | `product_description_lenght`  | Must be greater than or equal to zero.                                                    |
+| Check             | `product_photos_qty`          | Must be greater than or equal to zero.                                                    |
+| Check             | `product_weight_g`            | Must be greater than or equal to zero when populated.                                     |
+| Check             | `product_length_cm`           | Must be greater than or equal to zero when populated.                                     |
+| Check             | `product_height_cm`           | Must be greater than or equal to zero when populated.                                     |
+| Check             | `product_width_cm`            | Must be greater than or equal to zero when populated.                                     |
 
 #### Sellers
 
