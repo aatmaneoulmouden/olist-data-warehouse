@@ -423,10 +423,10 @@ Because Silver tables enforce foreign-key constraints, they must be loaded in de
 
 ```text
 1. Geolocations
-2. Customers
-3. Sellers
-4. Products
-5. Product Category Translations
+2. Product Category Translations
+3. Customers
+4. Sellers
+5. Products
 6. Orders
 7. Order Items
 8. Payments
