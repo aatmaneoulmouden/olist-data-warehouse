@@ -220,7 +220,7 @@ CREATE TABLE IF NOT EXISTS silver.olist_order_payments (
         CHECK (payment_sequential > 0),
 
     CONSTRAINT chk_payment_installments
-        CHECK (payment_installments >= 1),
+        CHECK (payment_installments >= 0),
 
     CONSTRAINT chk_payment_value
         CHECK (payment_value >= 0)
