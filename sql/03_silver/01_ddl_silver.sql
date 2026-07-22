@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS silver.olist_sellers (
 
 CREATE TABLE IF NOT EXISTS silver.olist_products (
     product_id                      VARCHAR(32) PRIMARY KEY,
-    product_category_name           VARCHAR(100) NOT NULL,
+    product_category_name           VARCHAR(100),
     product_name_length             INTEGER NOT NULL,
     product_description_length      INTEGER NOT NULL,
     product_photos_qty              INTEGER NOT NULL,
