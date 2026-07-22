@@ -236,7 +236,7 @@ CREATE TABLE IF NOT EXISTS silver.olist_order_reviews (
     review_score                    INTEGER NOT NULL,
     review_comment_title            TEXT,
     review_comment_message          TEXT,
-    review_creation_date            TIMESTAMP,
+    review_creation_date            DATE,
     review_answer_timestamp         TIMESTAMP,
     dwh_load_timestamp              TIMESTAMP NOT NULL DEFAULT NOW(),
 
