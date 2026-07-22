@@ -39,6 +39,18 @@ Action:
 Reason:
 - The correct sequence cannot be inferred from the available data.
 
+### Order approval after shipping deadline
+
+Records found: 127
+
+Action:
+- Preserved the source data.
+- No correction applied because the correct timestamps cannot be determined with certainty.
+
+Reason:
+- The source dataset contains orders where `order_approved_at` occurs after `shipping_limit_date`, violating the expected business process.
+- Modifying either timestamp would fabricate business data.
+
 ---
 
 ## Products
