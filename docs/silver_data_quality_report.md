@@ -29,6 +29,16 @@ Action:
 Reason:
 - It is impossible to determine which timestamp is incorrect.
 
+### Customer delivery occurs before carrier delivery
+
+Records found: 1,359
+
+Action:
+- Preserved the source data.
+
+Reason:
+- The correct delivery timestamps cannot be determined with certainty.
+
 ### Customer delivery before carrier handoff
 
 Records found: 23
@@ -38,6 +48,7 @@ Action:
 
 Reason:
 - The correct sequence cannot be inferred from the available data.
+- Modifying either timestamp would fabricate business data.
 
 ### Order approval after shipping deadline
 
@@ -45,10 +56,9 @@ Records found: 127
 
 Action:
 - Preserved the source data.
-- No correction applied because the correct timestamps cannot be determined with certainty.
 
 Reason:
-- The source dataset contains orders where `order_approved_at` occurs after `shipping_limit_date`, violating the expected business process.
+- The correct timestamps cannot be determined with certainty.
 - Modifying either timestamp would fabricate business data.
 
 ---
