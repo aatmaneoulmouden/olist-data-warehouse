@@ -239,7 +239,7 @@ The Gold layer applies the following business rules to ensure a consistent, reli
 
 | Column | Data Type | Description | Business Definition | Source Column | Transformation Logic |
 |----------|-----------|-------------|---------------------|---------------|----------------------|
-| `date_key` | INTEGER | Surrogate date key. | Integer representation of a calendar date (YYYYMMDD). | Generated using `ROW_NUMBER()`. |
+| `date_key` | INTEGER | Surrogate date key. | Integer representation of a calendar date (YYYYMMDD). | Generated | Generated from `full_date` using `TO_CHAR()` |
 | `full_date` | DATE | Calendar date. | Actual calendar date. | Generated | Generated while populating the date dimension. |
 | `year` | SMALLINT | Calendar year. | Year component. | Generated | Extracted from `full_date`. |
 | `quarter` | SMALLINT | Quarter number. | Quarter of the year. | Generated | Extracted from `full_date`. |
