@@ -299,8 +299,9 @@ Formatted using `INITCAP()`. |
 | `order_id` | VARCHAR(32) | Order identifier. | Order associated with the review. | `silver.olist_order_reviews.order_id` | Copied from Silver. |
 | `review_id` | VARCHAR(32) | Review identifier. | Business identifier of the review. | `silver.olist_order_reviews.review_id` | Copied from Silver. |
 | `review_score` | SMALLINT | Review score. | Customer satisfaction rating from 1 to 5. | `silver.olist_order_reviews.review_score` | Copied from Silver. |
-| `has_review_comment_title` | BOOLEAN | Review title indicator. | Indicates whether a review title exists. | `silver.olist_order_reviews.review_comment_title` | Derived using `CASE WHEN review_comment_title IS NULL THEN FALSE ELSE TRUE END`. |
-| `has_review_comment_message` | BOOLEAN | Review message indicator. | Indicates whether a review message exists. | `silver.olist_order_reviews.review_comment_message` | Derived using `CASE WHEN review_comment_message IS NULL THEN FALSE ELSE TRUE END`. |
+| `has_comment_title`   | BOOLEAN   | Review title indicator.   | Indicates whether a review includes a title.   | `silver.olist_order_reviews.review_comment_title`   | Returns `TRUE` if `review_comment_title` is not `NULL`; otherwise `FALSE`.   |
+| `has_comment_message` | BOOLEAN   | Review message indicator. | Indicates whether a review includes a message. | `silver.olist_order_reviews.review_comment_message` | Returns `TRUE` if `review_comment_message` is not `NULL`; otherwise `FALSE`. |
+
 
 ## Gold Validation Strategy
 
