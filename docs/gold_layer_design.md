@@ -280,11 +280,14 @@ Formatted using `INITCAP()`. |
 |----------|-----------|-------------|---------------------|---------------|----------------------|
 | `payment_key` | INTEGER | Surrogate primary key. | Unique warehouse identifier for a payment. | Generated | Generated using `ROW_NUMBER()`. |
 | `customer_key` | INTEGER | Customer foreign key. | Customer who made the payment. | `gold.dim_customers.customer_key` | Lookup using order. |
+| `payment_date_key` | INTEGER | Payment date foreign key. | CReferences the associated order purchase date. | `gold.dim_dates.date_key` | Lookup using order. |
 | `order_id` | VARCHAR(32) | Order identifier. | Order associated with the payment. | `silver.olist_order_payments.order_id` | Copied from Silver. |
 | `payment_sequential` | INTEGER | Payment sequence. | Sequence of the payment within the order. | `silver.olist_order_payments.payment_sequential` | Copied from Silver. |
 | `payment_type` | VARCHAR(30) | Payment method. | Method used by the customer to pay. | `silver.olist_order_payments.payment_type` | Copied from Silver. |
 | `payment_installments` | INTEGER | Installment count. | Number of installments used. | `silver.olist_order_payments.payment_installments` | Copied from Silver. |
 | `payment_value` | NUMERIC(10,2) | Payment amount. | Amount paid in this payment transaction. | `silver.olist_order_payments.payment_value` | Copied from Silver. |
+
+> **Note:** The Olist dataset does not provide a payment timestamp. Therefore, `payment_date_key` is derived from the associated order's purchase date (`order_purchase_timestamp`).
 
 ### `gold.fact_reviews`
 
